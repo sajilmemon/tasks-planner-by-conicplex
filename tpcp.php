@@ -65,7 +65,7 @@ function tpcp_send_stats($action)
     ];
 
     // PICP API URL
-    $url = 'http://test-membership.local/wp-json/picp/v1/track';
+    $url = 'https://conicplex.com/wp-json/picp/v1/track';
 
     $args = [
         'method'    => 'POST',

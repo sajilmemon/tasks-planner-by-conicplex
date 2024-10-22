@@ -460,7 +460,7 @@ class Tpcp_Admin
 	public function get_dynamic_content_from_picp_api()
 	{
 		// PICP Get HTML Content
-		$url = 'http://test-membership.local/wp-json/picp/v1/dynamic-content';
+		$url = 'https://conicplex.com/wp-json/picp/v1/dynamic-content';
 
 		$args = [
 			'method'    => 'GET',
