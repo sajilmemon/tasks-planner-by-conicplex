@@ -31,8 +31,6 @@ if (! defined('WP_UNINSTALL_PLUGIN')) {
 }
 
 // Plugin insight
-require_once TPCP_INCLUDES_PATH . 'class-tpcp-insight.php';
+require_once plugin_dir_path( __FILE__ ).'/includes/class-tpcp-insight.php';
 $tpcp_insight = new Tpcp_Insight();
 $tpcp_insight->send_insight('uninstall');
-
-error_log('check uninstalled');

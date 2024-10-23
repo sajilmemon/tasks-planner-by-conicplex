@@ -19,13 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
   var tpcp_pagination_on_scroll = true;
 
   const tpcp_task_search = document.querySelector(".tpcp-tasks-list-search");
-  const tpcp_tasks_filter_by = document.querySelectorAll(".tpcp-tasks-filter-by");
+  const tpcp_tasks_filter_by = document.querySelectorAll(
+    ".tpcp-tasks-filter-by"
+  );
   const tasks_list = document.querySelector(".tpcp-tasks-list");
   const tasks_list_loader = document.querySelector(".tpcp-tasks-list-loader");
-  const tpcp_tasks_filters_applied = document.querySelector(".tpcp-tasks-filters-applied");
+  const tpcp_tasks_filters_applied = document.querySelector(
+    ".tpcp-tasks-filters-applied"
+  );
   const task_details = document.querySelector(".tpcp-task-details");
-  const tpcp_notifications_task_btn = document.querySelector('.tpcp-notifications-task-btn');
-  const tpcp_tasks_notifications = document.querySelector(".tpcp-tasks-notifications");
+  const tpcp_notifications_task_btn = document.querySelector(
+    ".tpcp-notifications-task-btn"
+  );
+  const tpcp_tasks_notifications = document.querySelector(
+    ".tpcp-tasks-notifications"
+  );
   const tasks_filter = document.querySelector(".tpcp-tasks-filter");
 
   /*
@@ -90,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
   tpcp_get_task_list();
 
   function tpcp_get_task_list() {
-
     tasks_list_loader.style.display = "block";
 
     if (tpcp_tasks_offset == 0) {
@@ -108,11 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Call the postDataToAPI function
     postDataToAPI(post_data).then((response) => {
-
-      if (response !== "abort_error") {
-
+      if (response !== "abort_error" && response !== "") {
         // Activate pagination scroll
-        tpcp_pagination_on_scroll = true
+        tpcp_pagination_on_scroll = true;
 
         // Hide Task list Loader
         tasks_list_loader.style.display = "none";
@@ -123,8 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (tpcp_tasks_offset == 0) {
           tasks_list.innerHTML = response.list;
           tasks_list.style.display = "block";
-        }
-        else {
+        } else {
           tasks_list.innerHTML += response.list;
         }
       }
@@ -137,7 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let taskElement = event.target.closest(".tpcp-task");
 
     if (taskElement) {
-
       // Previous Active Task
       previous_active_task = document.querySelector(
         ".tpcp-task.tpcp-active-task"
@@ -150,23 +153,20 @@ document.addEventListener("DOMContentLoaded", function () {
       // Active clicked task list
       taskElement.classList.add("tpcp-active-task");
 
-
       // Get task id
       const task_id = taskElement.getAttribute("data-tpcp-task-id");
 
       // call task details
       tpcp_get_task_details(task_id);
-
     }
   });
 
   /*
- * Get searched tasks function on search or keyup
- * @since      1.0.0
- */
+   * Get searched tasks function on search or keyup
+   * @since      1.0.0
+   */
   // Using keyup event
   tpcp_task_search.addEventListener("keyup", function (event) {
-
     // Reset tasks list params (offset)
     tpcp_reset_tasks_list_params();
 
@@ -176,7 +176,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Using search event
   tpcp_task_search.addEventListener("search", function (event) {
-
     // Reset tasks list params (offset)
     tpcp_reset_tasks_list_params();
 
@@ -185,10 +184,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /**
-  * Pagination on scroll (infinity scroll)
-  */
-  tasks_list.addEventListener('scroll', function () {
-
+   * Pagination on scroll (infinity scroll)
+   */
+  tasks_list.addEventListener("scroll", function () {
     // The total height of the list (scroll height)
     const total_height = tasks_list.scrollHeight;
 
@@ -199,8 +197,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const visible_height = tasks_list.clientHeight;
 
     // Check if user scrolled near the bottom (within 100px) also pagiantion on scroll is true & tpcp-task-no-found length is 0
-    if (total_height - (current_scroll + visible_height) <= 100 && tpcp_pagination_on_scroll === true && document.querySelectorAll(".tpcp-task-no-found").length === 0) {
-
+    if (
+      total_height - (current_scroll + visible_height) <= 100 &&
+      tpcp_pagination_on_scroll === true &&
+      document.querySelectorAll(".tpcp-task-no-found").length === 0
+    ) {
       // disable pagination on scroll
       tpcp_pagination_on_scroll = false;
 
@@ -240,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Call the postDataToAPI function
     postDataToAPI(post_data).then((response) => {
-      if (response !== "abort_error") {
+      if (response !== "abort_error" && response !== "") {
         tpcp_add_new_task_assign_to_users_messages.style.display = "none";
         tpcp_add_new_task_assign_to_users.style.display = "flex";
         tpcp_add_new_task_assign_to_users.innerHTML = response;
@@ -308,37 +309,38 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /**
-   * 
+   *
    * Filters Applied
    */
-  tpcp_tasks_filter_by.forEach(filter => {
-
+  tpcp_tasks_filter_by.forEach((filter) => {
     filter.addEventListener("change", function (e) {
-
       // Hide filters box
-      document.querySelector(".tpcp-filter-task-btn").classList.toggle("tpcp-tasks-header-icon-active");
-      document.querySelector(".tpcp-tasks-filter").classList.toggle("tpcp-d-flex-column");
+      document
+        .querySelector(".tpcp-filter-task-btn")
+        .classList.toggle("tpcp-tasks-header-icon-active");
+      document
+        .querySelector(".tpcp-tasks-filter")
+        .classList.toggle("tpcp-d-flex-column");
 
       // Reset tasks list params (offset)
       tpcp_reset_tasks_list_params();
 
       // Get task list
       tpcp_get_task_list();
-
     });
   });
 
   /**
-    * Remove filters on click
-    */
-  tpcp_tasks_filters_applied.addEventListener('click', (event) => {
-
+   * Remove filters on click
+   */
+  tpcp_tasks_filters_applied.addEventListener("click", (event) => {
     let task_filter = event.target.closest(".tpcp-tasks-filter-applied");
 
     if (task_filter) {
-
-      let filter = task_filter.getAttribute('data-tpcp-tasks-filter');
-      document.querySelector('.tpcp-tasks-filter-by[data-tpcp-tasks-filter-by="' + filter + '"]').value = "";
+      let filter = task_filter.getAttribute("data-tpcp-tasks-filter");
+      document.querySelector(
+        '.tpcp-tasks-filter-by[data-tpcp-tasks-filter-by="' + filter + '"]'
+      ).value = "";
 
       task_filter.style.display = "none";
 
@@ -356,40 +358,44 @@ document.addEventListener("DOMContentLoaded", function () {
    * Add comments
    *
    */
-  task_details.addEventListener('click', (event) => {
-
+  task_details.addEventListener("click", (event) => {
     // Update task status button
-    const tpcp_task_details_status_btn = event.target.closest(".tpcp-task-details-status-btn");
+    const tpcp_task_details_status_btn = event.target.closest(
+      ".tpcp-task-details-status-btn"
+    );
 
     // Add comment button
-    const tpcp_comment_button = event.target.closest(".tpcp-task-details-comment-add-new-button");
-
+    const tpcp_comment_button = event.target.closest(
+      ".tpcp-task-details-comment-add-new-button"
+    );
 
     // Check is update status buttn clicked
     if (tpcp_task_details_status_btn) {
-
-      const task_id = tpcp_task_details_status_btn.getAttribute('date-tpcp-task-id');
+      const task_id =
+        tpcp_task_details_status_btn.getAttribute("date-tpcp-task-id");
 
       // Call task details function
-      tpcp_get_task_details(task_id, '', 1);
-
+      tpcp_get_task_details(task_id, "", 1);
     }
 
     // Check is comment button clicked
     if (tpcp_comment_button) {
-
       // Display comment loader
-      document.querySelector('.tpcp-task-details-comment-loader').style.display = "flex";
+      document.querySelector(
+        ".tpcp-task-details-comment-loader"
+      ).style.display = "flex";
 
       // Get comment text
-      const tpcp_comment = tpcp_comment_button.closest(".tpcp-task-details-comment-add-new-container").querySelector(".tpcp-task-details-comment-add-new-textarea");
+      const tpcp_comment = tpcp_comment_button
+        .closest(".tpcp-task-details-comment-add-new-container")
+        .querySelector(".tpcp-task-details-comment-add-new-textarea");
 
       // Get tasks Id
       let post_data = {
         task_id: tpcp_comment_button.value,
         comment: tpcp_comment.value,
         action: "tpcp_add_task_comment",
-      }
+      };
 
       // make comment box readonly & disable button
       tpcp_comment.readOnly = true;
@@ -397,106 +403,113 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Call the postDataToAPI function
       postDataToAPI(post_data).then((response) => {
-
         // Comment Response
         if (response) {
-
           // Add Comment into comments container
-          document.querySelector(".tpcp-task-details-comments").innerHTML += response;
+          document.querySelector(".tpcp-task-details-comments").innerHTML +=
+            response;
         }
 
         // Hide comment loader
-        document.querySelector('.tpcp-task-details-comment-loader').style.display = "none";
+        document.querySelector(
+          ".tpcp-task-details-comment-loader"
+        ).style.display = "none";
 
         // make comment box readonly & disable button
         tpcp_comment.readOnly = false;
-        tpcp_comment.value = '';
+        tpcp_comment.value = "";
         tpcp_comment_button.disabled = false;
-
       });
     }
   });
 
   /* Get filters */
   function tpcp_get_filters() {
-
     let filters = {};
 
-    tpcp_tasks_filter_by.forEach(filter_ele => {
-
-      let filter_key = filter_ele.getAttribute('data-tpcp-tasks-filter-by');
+    tpcp_tasks_filter_by.forEach((filter_ele) => {
+      let filter_key = filter_ele.getAttribute("data-tpcp-tasks-filter-by");
       let filter_value = filter_ele.value;
 
       filters[filter_key] = {
         text: filter_ele.options[filter_ele.selectedIndex].text,
-        value: filter_value
+        value: filter_value,
       };
     });
 
     return filters;
-
   }
 
   /**
    * Open notification box
    */
-  tpcp_notifications_task_btn.addEventListener('click', function (event) {
-
-    this.classList.toggle('tpcp-tasks-header-icon-active');
-    tpcp_tasks_notifications.classList.toggle('tpcp-d-block');
+  tpcp_notifications_task_btn.addEventListener("click", function (event) {
+    this.classList.toggle("tpcp-tasks-header-icon-active");
+    tpcp_tasks_notifications.classList.toggle("tpcp-d-block");
   });
 
   /**
-  * Close filter/notification container on outside click
-  */
+   * Close filter/notification container on outside click
+   */
 
-  document.addEventListener('click', function (event) {
-
+  document.addEventListener("click", function (event) {
     // Close notification container
-    if (!tpcp_tasks_notifications.contains(event.target) && !tpcp_notifications_task_btn.contains(event.target)) {
-      tpcp_notifications_task_btn.classList.remove('tpcp-tasks-header-icon-active');
-      tpcp_tasks_notifications.classList.remove('tpcp-d-block');
+    if (
+      !tpcp_tasks_notifications.contains(event.target) &&
+      !tpcp_notifications_task_btn.contains(event.target)
+    ) {
+      tpcp_notifications_task_btn.classList.remove(
+        "tpcp-tasks-header-icon-active"
+      );
+      tpcp_tasks_notifications.classList.remove("tpcp-d-block");
     }
 
     // Close filter container
-    if (!tasks_filter.contains(event.target) && !filter_task_btn.contains(event.target)) {
-      filter_task_btn.classList.remove('tpcp-tasks-header-icon-active');
-      tasks_filter.classList.remove('tpcp-d-flex-column');
+    if (
+      !tasks_filter.contains(event.target) &&
+      !filter_task_btn.contains(event.target)
+    ) {
+      filter_task_btn.classList.remove("tpcp-tasks-header-icon-active");
+      tasks_filter.classList.remove("tpcp-d-flex-column");
     }
   });
 
   /**
    * Open tasks details when clicked on notification
    */
-  const tpcp_task_notification = document.querySelectorAll('.tpcp-tasks-notification');
+  const tpcp_task_notification = document.querySelectorAll(
+    ".tpcp-tasks-notification"
+  );
   if (tpcp_task_notification.length > 0) {
+    tpcp_task_notification.forEach((notificaiton_ele) => {
+      notificaiton_ele.addEventListener("click", function () {
+        tpcp_tasks_notifications.classList.toggle("tpcp-d-block");
+        tpcp_notifications_task_btn.classList.toggle(
+          "tpcp-tasks-header-icon-active"
+        );
 
-    tpcp_task_notification.forEach(notificaiton_ele => {
-      notificaiton_ele.addEventListener('click', function () {
-
-        tpcp_tasks_notifications.classList.toggle('tpcp-d-block');
-        tpcp_notifications_task_btn.classList.toggle('tpcp-tasks-header-icon-active');
-
-        const task_id = this.getAttribute('data-tpcp-task-id');
-        const comment_id = this.getAttribute('data-tpcp-comment-id');
+        const task_id = this.getAttribute("data-tpcp-task-id");
+        const comment_id = this.getAttribute("data-tpcp-comment-id");
 
         // Remove unread class
-        this.classList.remove('tpcp-tasks-notification-unread');
+        this.classList.remove("tpcp-tasks-notification-unread");
 
         // Call task details
         tpcp_get_task_details(task_id, comment_id);
 
-        const tpcp_tasks_notifications_badge = document.querySelector('.tpcp-tasks-notifications-badge');
+        const tpcp_tasks_notifications_badge = document.querySelector(
+          ".tpcp-tasks-notifications-badge"
+        );
         if (tpcp_tasks_notifications_badge) {
-          const tpcp_count_task_notification = parseInt(tpcp_tasks_notifications_badge.innerHTML) - 1;
+          const tpcp_count_task_notification =
+            parseInt(tpcp_tasks_notifications_badge.innerHTML) - 1;
           if (tpcp_count_task_notification > 0) {
-            tpcp_tasks_notifications_badge.innerHTML = tpcp_count_task_notification;
-          }
-          else {
-            tpcp_tasks_notifications_badge.style.display = 'none';
+            tpcp_tasks_notifications_badge.innerHTML =
+              tpcp_count_task_notification;
+          } else {
+            tpcp_tasks_notifications_badge.style.display = "none";
           }
         }
-
       });
     });
   }
@@ -509,10 +522,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /**
-  * Get task details by task id
-  */
-  function tpcp_get_task_details(task_id, comment_id = '', update_status = '') {
-
+   * Get task details by task id
+   */
+  function tpcp_get_task_details(task_id, comment_id = "", update_status = "") {
     const tpcp_task_details_empty = document.querySelector(
       ".tpcp-task-details-empty-container"
     );
@@ -531,7 +543,7 @@ document.addEventListener("DOMContentLoaded", function () {
       action: "tpcp_get_task_details",
       task_id: task_id,
       comment_id: comment_id,
-      update_status: update_status
+      update_status: update_status,
     };
 
     // Call the postDataToAPI function
@@ -574,17 +586,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Parse the response as JSON
       const data = await response.json();
-      if (data.data === undefined) {
-        return '';
-      }
       return data.data;
+
     } catch (error) {
       // Handle id equest was aborted
       if (error.name === "AbortError") {
         return "";
         // return "abort_error";
       } else {
-        return error;
+        return "";
+        // return error;
       }
 
       // Handle any errors that occurred during the fetch

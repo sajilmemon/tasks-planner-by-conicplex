@@ -35,6 +35,6 @@ class Tpcp_Deactivator
 		// Plugin insight
 		require_once TPCP_INCLUDES_PATH . 'class-tpcp-insight.php';
 		$tpcp_insight = new Tpcp_Insight();
-		$tpcp_insight->send_insight('activation');
+		$tpcp_insight->send_insight('deactivation');
 	}
 }
