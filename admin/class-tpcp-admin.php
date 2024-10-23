@@ -73,7 +73,10 @@ class Tpcp_Admin
 	public function enqueue_scripts()
 	{
 
-		wp_register_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/tpcp-admin.js', array('jquery'), $this->version, false);
+		wp_register_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/tpcp-admin.js', array('jquery','wp-i18n'), $this->version, false);
+
+		// JS translations
+		wp_set_script_translations( $this->plugin_name, 'tpcp',  plugin_dir_path( __DIR__ ) . 'languages'   );
 
 		// localize script
 		$tpcp_api = array(
