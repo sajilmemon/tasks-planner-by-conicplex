@@ -26,9 +26,13 @@
  */
 
 // If uninstall not called from WordPress, then exit.
-if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+if (! defined('WP_UNINSTALL_PLUGIN')) {
 	exit;
 }
 
-// Fire for plugin insight
-tpcp_send_stats('uninstall');
+// Plugin insight
+require_once TPCP_INCLUDES_PATH . 'class-tpcp-insight.php';
+$tpcp_insight = new Tpcp_Insight();
+$tpcp_insight->send_insight('uninstall');
+
+error_log('check uninstalled');

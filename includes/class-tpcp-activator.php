@@ -20,7 +20,8 @@
  * @subpackage Tpcp/includes
  * @author     ConicPlex <hello@conicplex.com>
  */
-class Tpcp_Activator {
+class Tpcp_Activator
+{
 
 	/**
 	 * Short Description. (use period)
@@ -29,8 +30,11 @@ class Tpcp_Activator {
 	 *
 	 * @since    1.0.0
 	 */
-	public static function activate() {
-
+	public static function activate()
+	{
+		// Plugin insight
+		require_once TPCP_INCLUDES_PATH . 'class-tpcp-insight.php';
+		$tpcp_insight = new Tpcp_Insight();
+		$tpcp_insight->send_insight('activation');
 	}
-
 }

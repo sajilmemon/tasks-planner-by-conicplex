@@ -38,45 +38,13 @@ if (! defined('WPINC')) {
 define('TPCP_VERSION', '1.0.0');
 
 /**
- * Send the website domain & admin email to ConicPlex
- * for the get stats
+ * Define plugin path & URL
  */
-function tpcp_send_stats($action)
-{
-
-    // Get current plugin details
-    $plugin_details = get_plugin_data(__FILE__);
-
-    // return if plugin details is empty
-    if(empty($plugin_details) || empty($plugin_details['Name']) || empty($plugin_details['TextDomain']) || empty($plugin_details['Version'])){
-        return;
-    }
-
-    $site_info = [
-        'action'            => $action,
-        'site_url'          => get_site_url(),
-        'admin_email'       => get_option('admin_email'),
-        'plugin_name'       => $plugin_details['Name'],
-        'plugin_textdomain' => $plugin_details['TextDomain'],
-        'plugin_version'    => $plugin_details['Version'],
-        'wp_version'        => get_bloginfo('version'),
-        'site_language'     => get_bloginfo('language'),
-        'site_location'     => get_option('timezone_string') ?: date_default_timezone_get(),
-    ];
-
-    // PICP API URL
-    $url = 'https://conicplex.com/wp-json/picp/v1/track';
-
-    $args = [
-        'method'    => 'POST',
-        'body'      => $site_info,
-    ];
-
-    // Make the request
-    $response = wp_remote_request($url,
-            $args
-        );
-}
+define('TPCP_PATH', plugin_dir_path( __FILE__ ));
+define('TPCP_ADMIN_PATH', plugin_dir_path( __FILE__ ). 'admin/');
+define('TPCP_INCLUDES_PATH', plugin_dir_path( __FILE__ ). 'includes/');
+define('TPCP_URL', plugin_dir_url( __FILE__ ));
+define('TPCP_ADMIN_URL', plugin_dir_url( __FILE__ ). 'admin/');
 
 /**
  * The code that runs during plugin activation.
@@ -86,7 +54,6 @@ function activate_tpcp()
 {
     require_once plugin_dir_path(__FILE__) . 'includes/class-tpcp-activator.php';
     Tpcp_Activator::activate();
-    tpcp_send_stats('activation');
 }
 
 /**
@@ -97,7 +64,6 @@ function deactivate_tpcp()
 {
     require_once plugin_dir_path(__FILE__) . 'includes/class-tpcp-deactivator.php';
     Tpcp_Deactivator::deactivate();
-    tpcp_send_stats('deactivation');
 }
 
 register_activation_hook(__FILE__, 'activate_tpcp');
