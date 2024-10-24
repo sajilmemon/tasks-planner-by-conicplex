@@ -18,7 +18,7 @@ class Tpcp_Insight
     {
 
         // Get current plugin details
-        $plugin_details = defined('TPCP_PATH') ? get_plugin_data(TPCP_PATH . 'tpcp.php') : get_plugin_data(plugin_dir_path(__DIR__) . 'tpcp.php');
+        $plugin_details = defined('TPCP_PATH') ? get_plugin_data(TPCP_PATH . 'tasks-planner-by-conicplex.php') : get_plugin_data(plugin_dir_path(__DIR__) . 'tasks-planner-by-conicplex.php');
 
         // return if plugin details is empty
         if (empty($plugin_details) || empty($plugin_details['Name']) || empty($plugin_details['TextDomain']) || empty($plugin_details['Version'])) {

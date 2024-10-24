@@ -35,7 +35,7 @@ Take control of your team's task management and improve your WordPress site's pr
 
 == Installation ==
 
-1. Upload `tpcp.php` to the `/wp-content/plugins/` directory
+1. Upload `tasks-planner-by-conicplex.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. A new sub menu item `Tasks Planner By ConicPlex` will appear in your main Settings menu
 
