@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 // Prepare the query arguments
 $args = array(
     'search'         => '*' . $search_user . '*',

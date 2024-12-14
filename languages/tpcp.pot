@@ -3,13 +3,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tasks Planner By ConicPlex 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tpcp\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tasks-planner-by-conicplex\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-22T17:35:39+02:00\n"
+"POT-Creation-Date: 2024-12-13T17:07:13+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: tpcp\n"
@@ -34,228 +34,243 @@ msgstr ""
 msgid "https://conicplex.com/"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:105
+#: admin/class-tpcp-admin.php:108
 msgid "Tasks Planner by ConicPlex"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:106
+#: admin/class-tpcp-admin.php:109
 msgid "Tasks Planner"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:133
+#: admin/class-tpcp-admin.php:136
 msgctxt "post type general name"
 msgid "Tasks"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:134
+#: admin/class-tpcp-admin.php:137
 msgctxt "post type singular name"
 msgid "Task"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:135
+#: admin/class-tpcp-admin.php:138
 msgctxt "admin menu"
 msgid "Tasks"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:136
+#: admin/class-tpcp-admin.php:139
 msgctxt "add new on admin bar"
 msgid "Task"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:137
+#: admin/class-tpcp-admin.php:140
 msgctxt "task"
 msgid "Add New"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:138
-#: admin/partials/tpcp-admin-display.php:290
+#: admin/class-tpcp-admin.php:141
+#: admin/partials/tpcp-admin-display.php:292
 msgid "Add New Task"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:139
+#: admin/class-tpcp-admin.php:142
 msgid "New Task"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:140
+#: admin/class-tpcp-admin.php:143
 msgid "Edit Task"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:141
+#: admin/class-tpcp-admin.php:144
 msgid "View Task"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:142
+#: admin/class-tpcp-admin.php:145
 msgid "All Tasks"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:143
+#: admin/class-tpcp-admin.php:146
 msgid "Search Tasks"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:144
+#: admin/class-tpcp-admin.php:147
 msgid "Parent Tasks:"
 msgstr ""
 
-#: admin/class-tpcp-admin.php:145
+#: admin/class-tpcp-admin.php:148
 msgid "No tasks found."
 msgstr ""
 
-#: admin/class-tpcp-admin.php:146
+#: admin/class-tpcp-admin.php:149
 msgid "No tasks found in Trash."
 msgstr ""
 
+#: admin/class-tpcp-admin.php:176
+msgctxt "Label for pending tasks status"
+msgid "Pending"
+msgstr ""
+
 #. Translators: Used to display the count of pending tasks.
-#: admin/class-tpcp-admin.php:175
+#: admin/class-tpcp-admin.php:178
 msgid "Pending <span class=\"count\">(%s)</span>"
 msgid_plural "Pending <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#: admin/class-tpcp-admin.php:181
+msgctxt "Label for completed tasks status"
+msgid "Completed"
+msgstr ""
+
 #. Translators: Used to display the count of completed tasks.
-#: admin/class-tpcp-admin.php:180
+#: admin/class-tpcp-admin.php:183
 msgid "Completed <span class=\"count\">(%s)</span>"
 msgid_plural "Completed <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#: admin/class-tpcp-admin.php:186
+msgctxt "Label for in progress tasks status"
+msgid "In Progress"
+msgstr ""
+
 #. Translators: Used to display the count of in progress tasks.
-#: admin/class-tpcp-admin.php:185
+#: admin/class-tpcp-admin.php:188
 msgid "In Progress <span class=\"count\">(%s)</span>"
 msgid_plural "In Progress <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: admin/partials/tpcp-admin-display.php:64
+#: admin/partials/tpcp-admin-display.php:66
 msgid "Success! The task was added."
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:73
+#: admin/partials/tpcp-admin-display.php:75
 msgid "Something went wrong. The task was not added."
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:104
+#: admin/partials/tpcp-admin-display.php:106
 msgid "Filters"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:106
+#: admin/partials/tpcp-admin-display.php:108
 msgid "Filter by Status"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:127
+#: admin/partials/tpcp-admin-display.php:129
 msgid "Sort By"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:128
+#: admin/partials/tpcp-admin-display.php:130
 msgid "Newest First"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:129
+#: admin/partials/tpcp-admin-display.php:131
 msgid "Oldest First"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:130
+#: admin/partials/tpcp-admin-display.php:132
 msgid "Nerest Due Date"
 msgstr ""
 
 #. Translators: Used to display a user task comment notification. Uses %1$s for the user name and %2$s for the task name.
-#: admin/partials/tpcp-admin-display.php:207
+#: admin/partials/tpcp-admin-display.php:209
 msgid "%1$1s  commented on %2$2s"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:218
+#: admin/partials/tpcp-admin-display.php:220
 msgid "No Notifications Found"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:229
+#: admin/partials/tpcp-admin-display.php:231
 msgid "Search Tasks..."
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:305
+#: admin/partials/tpcp-admin-display.php:307
 msgid "Task:"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:309
+#: admin/partials/tpcp-admin-display.php:311
 msgid "Enter the task"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:316
-#: admin/partials/tpcp-task-details-admin-display.php:40
+#: admin/partials/tpcp-admin-display.php:318
+#: admin/partials/tpcp-task-details-admin-display.php:43
 msgid "Task Assign To:"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:329
+#: admin/partials/tpcp-admin-display.php:331
 msgid "Searching..."
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:335
+#: admin/partials/tpcp-admin-display.php:337
 msgid "Select the user for task"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:342
-#: admin/partials/tpcp-task-details-admin-display.php:48
+#: admin/partials/tpcp-admin-display.php:344
+#: admin/partials/tpcp-task-details-admin-display.php:51
 msgid "Task Due Date:"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:346
+#: admin/partials/tpcp-admin-display.php:348
 msgid "Enter the task due date"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:354
+#: admin/partials/tpcp-admin-display.php:356
 msgid "Task Description:"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:373
+#: admin/partials/tpcp-admin-display.php:375
 msgid "Enter the task description"
 msgstr ""
 
-#: admin/partials/tpcp-admin-display.php:382
+#: admin/partials/tpcp-admin-display.php:384
 msgid "Add Task"
 msgstr ""
 
-#: admin/partials/tpcp-admin-task-users-display.php:32
+#: admin/partials/tpcp-admin-task-users-display.php:34
 msgid "No Users Found"
 msgstr ""
 
-#: admin/partials/tpcp-task-details-admin-display.php:20
+#: admin/partials/tpcp-task-details-admin-display.php:23
 msgid "Mark in Progress"
 msgstr ""
 
-#: admin/partials/tpcp-task-details-admin-display.php:22
+#: admin/partials/tpcp-task-details-admin-display.php:25
 msgid "Mark as Completed"
 msgstr ""
 
-#: admin/partials/tpcp-task-details-admin-display.php:32
+#: admin/partials/tpcp-task-details-admin-display.php:35
 msgid "Task Status:"
 msgstr ""
 
-#: admin/partials/tpcp-task-details-admin-display.php:120
+#: admin/partials/tpcp-task-details-admin-display.php:123
 msgid "Write a comment..."
 msgstr ""
 
-#: admin/partials/tpcp-task-details-admin-display.php:121
+#: admin/partials/tpcp-task-details-admin-display.php:124
 msgid "Comment"
 msgstr ""
 
-#: admin/partials/tpcp-task-list-admin-display.php:35
+#: admin/partials/tpcp-task-list-admin-display.php:37
 msgid "Task Status"
 msgstr ""
 
-#: admin/partials/tpcp-task-list-admin-display.php:41
+#: admin/partials/tpcp-task-list-admin-display.php:43
 msgid "Task Assign To"
 msgstr ""
 
-#: admin/partials/tpcp-task-list-admin-display.php:47
+#: admin/partials/tpcp-task-list-admin-display.php:49
 msgid "Task Due Date"
 msgstr ""
 
-#: admin/partials/tpcp-task-list-admin-display.php:65
+#: admin/partials/tpcp-task-list-admin-display.php:67
 msgid "No More Tasks Found"
 msgstr ""
 
-#: admin/partials/tpcp-task-list-admin-display.php:65
+#: admin/partials/tpcp-task-list-admin-display.php:67
 msgid "No Tasks Found"
 msgstr ""
 
-#: admin/js/tpcp-admin.js:305
+#: admin/js/tpcp-admin.js:306
 msgid "Please select a user to assign the task to."
 msgstr ""

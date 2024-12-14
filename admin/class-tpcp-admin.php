@@ -173,17 +173,17 @@ class Tpcp_Admin
 		// custom status
 		$status = array(
 			'tpcp_pending' => array(
-				'label' 	  =>  _x('Pending', 'tpcp'),
+				'label' 	  =>  _x('Pending', 'Label for pending tasks status', 'tpcp'),
 				// Translators: Used to display the count of pending tasks.
 				'label_count' =>  _n_noop('Pending <span class="count">(%s)</span>', 'Pending <span class="count">(%s)</span>', 'tpcp')
 			),
 			'tpcp_completed' => array(
-				'label' 	  =>  _x('Completed', 'tpcp'),
+				'label' 	  =>  _x('Completed', 'Label for completed tasks status', 'tpcp'),
 				// Translators: Used to display the count of completed tasks.
 				'label_count' => _n_noop('Completed <span class="count">(%s)</span>', 'Completed <span class="count">(%s)</span>', 'tpcp')
 			),
 			'tpcp_in_progress' => array(
-				'label' 	  =>  _x('In Progress', 'tpcp'),
+				'label' 	  =>  _x('In Progress', 'Label for in progress tasks status', 'tpcp'),
 				// Translators: Used to display the count of in progress tasks.
 				'label_count' => _n_noop('In Progress <span class="count">(%s)</span>', 'In Progress <span class="count">(%s)</span>', 'tpcp')
 			),
@@ -376,9 +376,9 @@ class Tpcp_Admin
 		}
 
 		$task_status = [
-			'tpcp_pending' 	   => _x('Pending', 'tpcp'),
-			'tpcp_completed'   => _x('Completed', 'tpcp'),
-			'tpcp_in_progress' => _x('In Progress', 'tpcp'),
+			'tpcp_pending' 	   => _x('Pending', 'Label for pending tasks status', 'tpcp'),
+			'tpcp_completed'   => _x('Completed', 'Label for completed tasks status', 'tpcp'),
+			'tpcp_in_progress' => _x('In Progress', 'Label for in progress tasks status', 'tpcp'),
 		];
 
 		return !empty($task_status[$status]) ? $task_status[sanitize_text_field($status)] : $status;

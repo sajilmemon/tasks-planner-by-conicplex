@@ -53,7 +53,7 @@ define('TPCP_ADMIN_URL', plugin_dir_url( __FILE__ ). 'admin/');
 function activate_tpcp()
 {
     require_once plugin_dir_path(__FILE__) . 'includes/class-tpcp-activator.php';
-    Tpcp_Activator::activate();
+    Tpcp_Activator::tpcp_activate();
 }
 
 /**
@@ -63,7 +63,7 @@ function activate_tpcp()
 function deactivate_tpcp()
 {
     require_once plugin_dir_path(__FILE__) . 'includes/class-tpcp-deactivator.php';
-    Tpcp_Deactivator::deactivate();
+    Tpcp_Deactivator::tpcp_deactivate();
 }
 
 register_activation_hook(__FILE__, 'activate_tpcp');
@@ -88,7 +88,7 @@ function run_tpcp()
 {
 
     $plugin = new Tpcp();
-    $plugin->run();
+    $plugin->tpcp_run();
 
     // tpcp_send_stats('activation');
 

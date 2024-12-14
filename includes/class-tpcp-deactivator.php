@@ -30,7 +30,7 @@ class Tpcp_Deactivator
 	 *
 	 * @since    1.0.0
 	 */
-	public static function deactivate()
+	public static function tpcp_deactivate()
 	{
 		// Plugin insight
 		require_once TPCP_INCLUDES_PATH . 'class-tpcp-insight.php';

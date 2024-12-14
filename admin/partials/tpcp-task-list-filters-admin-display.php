@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 // Check if the filter is not empty and is an array.
 if (!empty($filters) && is_array($filters)) {
 

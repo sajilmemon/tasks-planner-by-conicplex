@@ -12,6 +12,8 @@
  * @subpackage Tpcp/admin/partials
  */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 // enqueue admin style & script
 wp_enqueue_style($this->plugin_name);
 wp_enqueue_script($this->plugin_name);

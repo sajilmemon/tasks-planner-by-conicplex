@@ -30,7 +30,7 @@ class Tpcp_Activator
 	 *
 	 * @since    1.0.0
 	 */
-	public static function activate()
+	public static function tpcp_activate()
 	{
 		// Plugin insight
 		require_once TPCP_INCLUDES_PATH . 'class-tpcp-insight.php';

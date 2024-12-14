@@ -3,7 +3,7 @@ Contributors: sajilmemon
 Donate link: https://conicplex.com
 Tags: task management, to-do list, project management, task assignment, team management,
 Requires at least: 5.2
-Tested up to: 6.6.2
+Tested up to: 6.7.1
 Stable tag: 1.0.0
 Requires PHP: 7.0
 License: GPLv2 or later
@@ -71,7 +71,7 @@ Yes, Tasks Planner by Conicplex is compatible with popular multilingual plugins,
 
 == Credits & 3rd Party Services ==
 
-**[ConicPlex.com](https://conicplex.com/)**: Tasks Planner by ConicPlex uses [ConicPlex](https://conicplex.com/) (own website) to store plugin insights. Whenever the plugin is activated, deactivated, or uninstalled, an API request is sent to Conicplex to record the action. The API request includes the action, site URL, admin email, plugin version, plugin name, plugin text domain, WordPress version, site language, and site timezone.
+**[ConicPlex.com](https://conicplex.com/)**: Tasks Planner by ConicPlex uses [ConicPlex](https://conicplex.com/) (own website) to store plugin insights. Whenever the plugin is activated, deactivated, or uninstalled, an API request is sent to Conicplex to record the action. The API request includes the action, site URL, admin email, plugin version, plugin name, plugin text domain, WordPress version, site language, and site timezone. [Terms & Policies](https://conicplex.com/about/)
 
 == Changelog ==
 

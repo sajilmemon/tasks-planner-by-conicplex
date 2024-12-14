@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 $assign_to = get_post_meta($task_id, '_tpcp_assign_to', true);
 
 $get_user = get_user_by('id', !empty($assign_to) ? $assign_to : 1);

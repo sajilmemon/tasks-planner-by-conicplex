@@ -180,8 +180,8 @@ class Tpcp {
 	 *
 	 * @since    1.0.0
 	 */
-	public function run() {
-		$this->loader->run();
+	public function tpcp_run() {
+		$this->loader->tpcp_run();
 	}
 
 	/**
