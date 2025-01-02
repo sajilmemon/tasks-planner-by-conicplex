@@ -31,5 +31,5 @@ if (!empty($users)) {
 <?php
     }
 } else {
-    echo '<span class="tpcp-add-new-task-assign-to-user-no-found">' . esc_html__('No Users Found', 'tpcp') . '</span>';
+    echo '<span class="tpcp-add-new-task-assign-to-user-no-found">' . esc_html__('No Users Found', 'tasks-planner-by-conicplex') . '</span>';
 }

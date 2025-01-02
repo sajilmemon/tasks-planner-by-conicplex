@@ -34,19 +34,19 @@ if ($query->have_posts()) :
             <div class="tpcp-task-items">
 
                 <!-- Tasks status -->
-                <div class="tpcp-task-status tpcp-task-item" title="<?php esc_html_e('Task Status', 'tpcp'); ?>">
+                <div class="tpcp-task-status tpcp-task-item" title="<?php esc_html_e('Task Status', 'tasks-planner-by-conicplex'); ?>">
                     <span class="tpcp-task-status-icon dashicons dashicons-clock"></span>
                     <span class="tpcp-task-status-text"><?php echo esc_html($this->custom_status_list(get_post_status())); ?></span>
                 </div>
 
                 <!-- Tasks assign to -->
-                <div class="tpcp-task-assign-to tpcp-task-item" title="<?php esc_html_e('Task Assign To', 'tpcp'); ?>">
+                <div class="tpcp-task-assign-to tpcp-task-item" title="<?php esc_html_e('Task Assign To', 'tasks-planner-by-conicplex'); ?>">
                     <img class="tpcp-task-assign-to-avatar" src="<?php echo esc_url(get_avatar_url($assign_to)); ?>" />
                     <span class="tpcp-task-assign-to-name"><?php echo esc_html($assign_to_name); ?></span>
                 </div>
 
                 <!-- Tasks due date -->
-                <div class="tpcp-task-due-date tpcp-task-item" title="<?php esc_html_e('Task Due Date', 'tpcp'); ?>">
+                <div class="tpcp-task-due-date tpcp-task-item" title="<?php esc_html_e('Task Due Date', 'tasks-planner-by-conicplex'); ?>">
                     <span class="tpcp-task-due-date-icon dashicons dashicons-calendar-alt"></span>
                     <span class="tpcp-task-due-date-text"><?php echo esc_html($due_date); ?></span>
                 </div>
@@ -64,7 +64,7 @@ else:
     ?>
     <!-- Tasks List -->
     <div class="tpcp-task-no-found">
-        <?php $args['offset'] > 0 ? esc_html_e('No More Tasks Found', 'tpcp') : esc_html_e('No Tasks Found', 'tpcp'); ?>
+        <?php $args['offset'] > 0 ? esc_html_e('No More Tasks Found', 'tasks-planner-by-conicplex') : esc_html_e('No Tasks Found', 'tasks-planner-by-conicplex'); ?>
     </div>
 <?php
 endif;

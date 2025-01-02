@@ -21,7 +21,7 @@
  * Author URI:        https://conicplex.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       tpcp
+ * Text Domain:       tasks-planner-by-conicplex
  * Domain Path:       /languages
  */
 
@@ -50,7 +50,7 @@ define('TPCP_ADMIN_URL', plugin_dir_url( __FILE__ ). 'admin/');
  * The code that runs during plugin activation.
  * This action is documented in includes/class-tpcp-activator.php
  */
-function activate_tpcp()
+function tpcp_activate()
 {
     require_once plugin_dir_path(__FILE__) . 'includes/class-tpcp-activator.php';
     Tpcp_Activator::tpcp_activate();
@@ -60,14 +60,14 @@ function activate_tpcp()
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-tpcp-deactivator.php
  */
-function deactivate_tpcp()
+function tpcp_deactivate()
 {
     require_once plugin_dir_path(__FILE__) . 'includes/class-tpcp-deactivator.php';
     Tpcp_Deactivator::tpcp_deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_tpcp');
-register_deactivation_hook(__FILE__, 'deactivate_tpcp');
+register_activation_hook(__FILE__, 'tpcp_activate');
+register_deactivation_hook(__FILE__, 'tpcp_deactivate');
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -84,7 +84,7 @@ require plugin_dir_path(__FILE__) . 'includes/class-tpcp.php';
  *
  * @since    1.0.0
  */
-function run_tpcp()
+function tpcp_run()
 {
 
     $plugin = new Tpcp();
@@ -93,4 +93,4 @@ function run_tpcp()
     // tpcp_send_stats('activation');
 
 }
-run_tpcp();
+tpcp_run();

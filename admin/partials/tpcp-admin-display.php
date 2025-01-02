@@ -63,7 +63,7 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
     <?php if (!empty($tasks_success)) { ?>
         <div class="notice notice-success is-dismissible">
             <p>
-                <?php esc_html_e('Success! The task was added.', 'tpcp'); ?>
+                <?php esc_html_e('Success! The task was added.', 'tasks-planner-by-conicplex'); ?>
             </p>
         </div>
     <?php } ?>
@@ -72,7 +72,7 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
     <?php if (!empty($tasks_error)) { ?>
         <div class="notice notice-error is-dismissible">
             <p>
-                <?php esc_html_e('Something went wrong. The task was not added.', 'tpcp'); ?>
+                <?php esc_html_e('Something went wrong. The task was not added.', 'tasks-planner-by-conicplex'); ?>
             </p>
         </div>
     <?php } ?>
@@ -103,9 +103,9 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
                             <div class="tpcp-tasks-filter-container">
                                 <span class="tpcp-tasks-header-icon dashicons dashicons-filter tpcp-filter-task-btn"></span>
                                 <div class="tpcp-tasks-filter">
-                                    <span class="tpcp-tasks-filter-header"><?php echo esc_html_e('Filters', 'tpcp'); ?></span>
+                                    <span class="tpcp-tasks-filter-header"><?php echo esc_html_e('Filters', 'tasks-planner-by-conicplex'); ?></span>
                                     <select class="tpcp-tasks-filter-by" data-tpcp-tasks-filter-by="status">
-                                        <option value="" disabled selected><?php echo esc_html_e('Filter by Status', 'tpcp'); ?></option>
+                                        <option value="" disabled selected><?php echo esc_html_e('Filter by Status', 'tasks-planner-by-conicplex'); ?></option>
 
                                         <?php
 
@@ -126,10 +126,10 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
 
                                     <!-- Sort by filter -->
                                     <select class="tpcp-tasks-filter-by" data-tpcp-tasks-filter-by="sortby">
-                                        <option value="" disabled selected><?php echo esc_html_e('Sort By', 'tpcp'); ?></option>
-                                        <option value="desc"><?php echo esc_html_e('Newest First', 'tpcp'); ?></option>
-                                        <option value="asc"><?php echo esc_html_e('Oldest First', 'tpcp'); ?></option>
-                                        <option value="due_date_asc"><?php echo esc_html_e('Nerest Due Date', 'tpcp'); ?></option>
+                                        <option value="" disabled selected><?php echo esc_html_e('Sort By', 'tasks-planner-by-conicplex'); ?></option>
+                                        <option value="desc"><?php echo esc_html_e('Newest First', 'tasks-planner-by-conicplex'); ?></option>
+                                        <option value="asc"><?php echo esc_html_e('Oldest First', 'tasks-planner-by-conicplex'); ?></option>
+                                        <option value="due_date_asc"><?php echo esc_html_e('Nerest Due Date', 'tasks-planner-by-conicplex'); ?></option>
                                     </select>
 
                                 </div>
@@ -206,7 +206,7 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
 
                                             echo
                                             // Translators: Used to display a user task comment notification. Uses %1$s for the user name and %2$s for the task name.
-                                            sprintf(esc_html__('%1$1s  commented on %2$2s', 'tpcp'),
+                                            sprintf(esc_html__('%1$1s  commented on %2$2s', 'tasks-planner-by-conicplex'),
                                                 '<span class="tpcp-tasks-notification-user">' . esc_html(ucfirst($task_user_display_name)) . '</span>',
                                                 '<span class="tpcp-tasks-notification-task-title">' . esc_html($task_title) . '</span>',
                                             );
@@ -217,7 +217,7 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
                                             echo '</div>';
                                         }
                                     } else {
-                                        echo '<div class="tpcp-tasks-notification-no-found">' . esc_html__('No Notifications Found', 'tpcp') . '</div>';
+                                        echo '<div class="tpcp-tasks-notification-no-found">' . esc_html__('No Notifications Found', 'tasks-planner-by-conicplex') . '</div>';
                                     }
                                     ?>
                                 </div>
@@ -228,7 +228,7 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
                     <!-- Search -->
                     <div class="tpcp-tasks-list-search-container">
                         <span class="tpcp-tasks-list-search-icon dashicons dashicons-search"></span>
-                        <input class="tpcp-tasks-list-search" type="search" placeholder="<?php esc_html_e('Search Tasks...', 'tpcp'); ?>" />
+                        <input class="tpcp-tasks-list-search" type="search" placeholder="<?php esc_html_e('Search Tasks...', 'tasks-planner-by-conicplex'); ?>" />
                     </div>
 
                     <!-- Tasks filters applied container -->
@@ -289,7 +289,7 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
     <!-- Add new task form modal -->
     <div class="tpcp-modal tpcp-add-new-task-modal" id="tpcp_modal">
         <div class="tpcp-add-new-task-container">
-            <span class="tpcp-modal-title"><?php esc_html_e('Add New Task', 'tpcp'); ?></span>
+            <span class="tpcp-modal-title"><?php esc_html_e('Add New Task', 'tasks-planner-by-conicplex'); ?></span>
             <div class="tpcp-add-new-task">
                 <form method="post" id="tpcp_tasks_add_new_form">
 
@@ -304,18 +304,18 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
                             <!-- Task -->
                             <tr>
                                 <th scope="row">
-                                    <label for="tpcp_task_title"><?php esc_html_e('Task:', 'tpcp'); ?></label>
+                                    <label for="tpcp_task_title"><?php esc_html_e('Task:', 'tasks-planner-by-conicplex'); ?></label>
                                 </th>
                                 <td>
                                     <input type="text" id="tpcp_task_title" class="regular-text" name="tpcp_task_title" required />
-                                    <p class="description"><?php esc_html_e('Enter the task', 'tpcp'); ?></p>
+                                    <p class="description"><?php esc_html_e('Enter the task', 'tasks-planner-by-conicplex'); ?></p>
                                 </td>
                             </tr>
 
                             <!-- Task Assign To -->
                             <tr>
                                 <th scope="row">
-                                    <label for="tpcp_task_assign_to"><?php esc_html_e('Task Assign To:', 'tpcp'); ?></label>
+                                    <label for="tpcp_task_assign_to"><?php esc_html_e('Task Assign To:', 'tasks-planner-by-conicplex'); ?></label>
                                 </th>
                                 <td>
 
@@ -328,24 +328,24 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
                                     <div class="tpcp-add-new-task-assign-to-users-container regular-text">
 
                                         <!-- Search -->
-                                        <div class="regular-text" id="tpcp_add_new_task_assign_to_users_messages"><?php esc_html_e('Searching...', 'tpcp') ?></div>
+                                        <div class="regular-text" id="tpcp_add_new_task_assign_to_users_messages"><?php esc_html_e('Searching...', 'tasks-planner-by-conicplex') ?></div>
 
                                         <div class="tpcp-add-new-task-assign-to-users regular-text" id="tpcp_add_new_task_assign_to_users">
 
                                         </div>
                                     </div>
-                                    <p class="description"><?php esc_html_e('Select the user for task', 'tpcp'); ?></p>
+                                    <p class="description"><?php esc_html_e('Select the user for task', 'tasks-planner-by-conicplex'); ?></p>
                                 </td>
                             </tr>
 
                             <!-- Task Due Date -->
                             <tr>
                                 <th scope="row">
-                                    <label for="tpcp_task_due_date"><?php esc_html_e('Task Due Date:', 'tpcp'); ?></label>
+                                    <label for="tpcp_task_due_date"><?php esc_html_e('Task Due Date:', 'tasks-planner-by-conicplex'); ?></label>
                                 </th>
                                 <td>
                                     <input type="date" id="tpcp_task_due_date" class="regular-text" name="tpcp_task_due_date" required />
-                                    <p class="description"><?php esc_html_e('Enter the task due date', 'tpcp'); ?></p>
+                                    <p class="description"><?php esc_html_e('Enter the task due date', 'tasks-planner-by-conicplex'); ?></p>
                                 </td>
                             </tr>
 
@@ -353,11 +353,11 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
                             <!-- Task Description -->
                             <tr>
                                 <th scope="row">
-                                    <label for="tpcp_task_description"><?php esc_html_e('Task Description:', 'tpcp'); ?></label>
+                                    <label for="tpcp_task_description"><?php esc_html_e('Task Description:', 'tasks-planner-by-conicplex'); ?></label>
                                 </th>
                                 <td>
                                     <?php
-                                    // Add wordpress rich editor for task description
+                                    // Add WordPress rich editor for task description
                                     wp_editor(
                                         '', // Content
                                         'tpcp_task_description', // Editor ID
@@ -372,7 +372,7 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
                                         )
                                     );
                                     ?>
-                                    <p class="description"><?php esc_html_e('Enter the task description', 'tpcp'); ?></p>
+                                    <p class="description"><?php esc_html_e('Enter the task description', 'tasks-planner-by-conicplex'); ?></p>
                                 </td>
                             </tr>
 
@@ -381,7 +381,7 @@ if (isset($_POST['tpcp_add_new_task_submit']) && isset($_POST['tpcp_task_add_new
 
                     <!-- Submit Button -->
                     <?php submit_button(
-                        esc_html__('Add Task', 'tpcp'),
+                        esc_html__('Add Task', 'tasks-planner-by-conicplex'),
                         'primary',
                         'tpcp_add_new_task_submit',
                     ); ?>

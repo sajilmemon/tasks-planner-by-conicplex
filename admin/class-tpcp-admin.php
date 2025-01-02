@@ -76,7 +76,7 @@ class Tpcp_Admin
 		wp_register_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/tpcp-admin.js', array('jquery', 'wp-i18n'), $this->version, false);
 
 		// JS translations
-		wp_set_script_translations($this->plugin_name, 'tpcp',  plugin_dir_path(__DIR__) . 'languages');
+		wp_set_script_translations($this->plugin_name, 'tasks-planner-by-conicplex',  plugin_dir_path(__DIR__) . 'languages');
 
 		// localize script
 		$tpcp_api = array(
@@ -105,8 +105,8 @@ class Tpcp_Admin
 
 		// Add admin page
 		add_menu_page(
-			__('Tasks Planner by ConicPlex', 'tpcp'),
-			__('Tasks Planner', 'tpcp'),
+			__('Tasks Planner by ConicPlex', 'tasks-planner-by-conicplex'),
+			__('Tasks Planner', 'tasks-planner-by-conicplex'),
 			'edit_posts',
 			'tasks-planner-by-conicplex',
 			[$this, 'admin_menu_callback'],
@@ -133,20 +133,20 @@ class Tpcp_Admin
 	public function create_task_post_type()
 	{
 		$labels = array(
-			'name'               => _x('Tasks', 'post type general name', 'tpcp'),
-			'singular_name'      => _x('Task', 'post type singular name', 'tpcp'),
-			'menu_name'          => _x('Tasks', 'admin menu', 'tpcp'),
-			'name_admin_bar'     => _x('Task', 'add new on admin bar', 'tpcp'),
-			'add_new'            => _x('Add New', 'task', 'tpcp'),
-			'add_new_item'       => __('Add New Task', 'tpcp'),
-			'new_item'           => __('New Task', 'tpcp'),
-			'edit_item'          => __('Edit Task', 'tpcp'),
-			'view_item'          => __('View Task', 'tpcp'),
-			'all_items'          => __('All Tasks', 'tpcp'),
-			'search_items'       => __('Search Tasks', 'tpcp'),
-			'parent_item_colon'  => __('Parent Tasks:', 'tpcp'),
-			'not_found'          => __('No tasks found.', 'tpcp'),
-			'not_found_in_trash' => __('No tasks found in Trash.', 'tpcp'),
+			'name'               => _x('Tasks', 'post type general name', 'tasks-planner-by-conicplex'),
+			'singular_name'      => _x('Task', 'post type singular name', 'tasks-planner-by-conicplex'),
+			'menu_name'          => _x('Tasks', 'admin menu', 'tasks-planner-by-conicplex'),
+			'name_admin_bar'     => _x('Task', 'add new on admin bar', 'tasks-planner-by-conicplex'),
+			'add_new'            => _x('Add New', 'task', 'tasks-planner-by-conicplex'),
+			'add_new_item'       => __('Add New Task', 'tasks-planner-by-conicplex'),
+			'new_item'           => __('New Task', 'tasks-planner-by-conicplex'),
+			'edit_item'          => __('Edit Task', 'tasks-planner-by-conicplex'),
+			'view_item'          => __('View Task', 'tasks-planner-by-conicplex'),
+			'all_items'          => __('All Tasks', 'tasks-planner-by-conicplex'),
+			'search_items'       => __('Search Tasks', 'tasks-planner-by-conicplex'),
+			'parent_item_colon'  => __('Parent Tasks:', 'tasks-planner-by-conicplex'),
+			'not_found'          => __('No tasks found.', 'tasks-planner-by-conicplex'),
+			'not_found_in_trash' => __('No tasks found in Trash.', 'tasks-planner-by-conicplex'),
 		);
 
 		$args = array(
@@ -173,19 +173,19 @@ class Tpcp_Admin
 		// custom status
 		$status = array(
 			'tpcp_pending' => array(
-				'label' 	  =>  _x('Pending', 'Label for pending tasks status', 'tpcp'),
+				'label' 	  =>  _x('Pending', 'Label for pending tasks status', 'tasks-planner-by-conicplex'),
 				// Translators: Used to display the count of pending tasks.
-				'label_count' =>  _n_noop('Pending <span class="count">(%s)</span>', 'Pending <span class="count">(%s)</span>', 'tpcp')
+				'label_count' =>  _n_noop('Pending <span class="count">(%s)</span>', 'Pending <span class="count">(%s)</span>', 'tasks-planner-by-conicplex')
 			),
 			'tpcp_completed' => array(
-				'label' 	  =>  _x('Completed', 'Label for completed tasks status', 'tpcp'),
+				'label' 	  =>  _x('Completed', 'Label for completed tasks status', 'tasks-planner-by-conicplex'),
 				// Translators: Used to display the count of completed tasks.
-				'label_count' => _n_noop('Completed <span class="count">(%s)</span>', 'Completed <span class="count">(%s)</span>', 'tpcp')
+				'label_count' => _n_noop('Completed <span class="count">(%s)</span>', 'Completed <span class="count">(%s)</span>', 'tasks-planner-by-conicplex')
 			),
 			'tpcp_in_progress' => array(
-				'label' 	  =>  _x('In Progress', 'Label for in progress tasks status', 'tpcp'),
+				'label' 	  =>  _x('In Progress', 'Label for in progress tasks status', 'tasks-planner-by-conicplex'),
 				// Translators: Used to display the count of in progress tasks.
-				'label_count' => _n_noop('In Progress <span class="count">(%s)</span>', 'In Progress <span class="count">(%s)</span>', 'tpcp')
+				'label_count' => _n_noop('In Progress <span class="count">(%s)</span>', 'In Progress <span class="count">(%s)</span>', 'tasks-planner-by-conicplex')
 			),
 		);
 
@@ -376,9 +376,9 @@ class Tpcp_Admin
 		}
 
 		$task_status = [
-			'tpcp_pending' 	   => _x('Pending', 'Label for pending tasks status', 'tpcp'),
-			'tpcp_completed'   => _x('Completed', 'Label for completed tasks status', 'tpcp'),
-			'tpcp_in_progress' => _x('In Progress', 'Label for in progress tasks status', 'tpcp'),
+			'tpcp_pending' 	   => _x('Pending', 'Label for pending tasks status', 'tasks-planner-by-conicplex'),
+			'tpcp_completed'   => _x('Completed', 'Label for completed tasks status', 'tasks-planner-by-conicplex'),
+			'tpcp_in_progress' => _x('In Progress', 'Label for in progress tasks status', 'tasks-planner-by-conicplex'),
 		];
 
 		return !empty($task_status[$status]) ? $task_status[sanitize_text_field($status)] : $status;

@@ -20,9 +20,9 @@ $due_date = get_date_from_gmt(esc_html(get_post_meta($task_id, '_tpcp_due_date',
     <div class="tpcp-task-details-status-btn-container">
         <?php
         if ($status == 'tpcp_pending') {
-            echo '<button type="button" class="tpcp-task-details-status-btn tpcp-task-details-status-in-progress button button-primary" date-tpcp-task-id="' . esc_html($task_id) . '">' . esc_html__('Mark in Progress', 'tpcp') . '</button>';
+            echo '<button type="button" class="tpcp-task-details-status-btn tpcp-task-details-status-in-progress button button-primary" date-tpcp-task-id="' . esc_html($task_id) . '">' . esc_html__('Mark in Progress', 'tasks-planner-by-conicplex') . '</button>';
         } elseif ($status == 'tpcp_in_progress') {
-            echo '<button type="button" class="tpcp-task-details-status-btn tpcp-task-details-status-completed button button-primary" date-tpcp-task-id="' . esc_html($task_id) . '">' . esc_html__('Mark as Completed', 'tpcp') . '</button>';
+            echo '<button type="button" class="tpcp-task-details-status-btn tpcp-task-details-status-completed button button-primary" date-tpcp-task-id="' . esc_html($task_id) . '">' . esc_html__('Mark as Completed', 'tasks-planner-by-conicplex') . '</button>';
         }
         ?>
     </div>
@@ -32,7 +32,7 @@ $due_date = get_date_from_gmt(esc_html(get_post_meta($task_id, '_tpcp_due_date',
 <div class="tpcp-task-details-items">
     <div class="tpcp-task-details-item">
 
-        <span class="tpcp-task-details-item-label"><?php esc_html_e('Task Status:', 'tpcp'); ?></span>
+        <span class="tpcp-task-details-item-label"><?php esc_html_e('Task Status:', 'tasks-planner-by-conicplex'); ?></span>
         <div class="tpcp-task-details-item-text-container tpcp-task-badge tpcp-task-badge-secondary">
             <span class="tpcp-task-details-item-text-icon dashicons dashicons-clock"></span>
             <span class="tpcp-task-details-item-text"><?php echo esc_html($this->custom_status_list($status)); ?></span>
@@ -40,7 +40,7 @@ $due_date = get_date_from_gmt(esc_html(get_post_meta($task_id, '_tpcp_due_date',
 
     </div>
     <div class="tpcp-task-details-item">
-        <span class="tpcp-task-details-item-label"><?php esc_html_e('Task Assign To:', 'tpcp'); ?></span>
+        <span class="tpcp-task-details-item-label"><?php esc_html_e('Task Assign To:', 'tasks-planner-by-conicplex'); ?></span>
         <div class="tpcp-task-details-item-text-container tpcp-task-badge tpcp-task-badge-primary">
             <img class="tpcp-task-details-item-text-icon" src="<?php echo esc_url($assign_to_avatar); ?>" />
             <span class="tpcp-task-details-item-text"><?php echo esc_html(ucfirst($assign_to_name)); ?></span>
@@ -48,7 +48,7 @@ $due_date = get_date_from_gmt(esc_html(get_post_meta($task_id, '_tpcp_due_date',
     </div>
 
     <div class="tpcp-task-details-item">
-        <span class="tpcp-task-details-item-label"><?php esc_html_e('Task Due Date:', 'tpcp'); ?></span>
+        <span class="tpcp-task-details-item-label"><?php esc_html_e('Task Due Date:', 'tasks-planner-by-conicplex'); ?></span>
         <div class="tpcp-task-details-item-text-container tpcp-task-badge tpcp-task-badge-danger">
             <span class="tpcp-task-details-item-text-icon dashicons dashicons-calendar-alt"></span>
             <span class="tpcp-task-details-item-text"><?php echo esc_html($due_date); ?></span>
@@ -120,7 +120,7 @@ $due_date = get_date_from_gmt(esc_html(get_post_meta($task_id, '_tpcp_due_date',
     </div>
 
     <div class="tpcp-task-details-comment-add-new-container">
-        <textarea class="tpcp-task-details-comment-add-new-textarea" name="tpcp_task_details_comment_add_new" id="tpcp_task_details_comment_add_new" rows="4" placeholder="<?php esc_html_e('Write a comment...', 'tpcp'); ?>"></textarea>
-        <button class="tpcp-task-details-comment-add-new-button button button-primary" id="tpcp_task_details_comment_add_new_button" type="button" value="<?php echo esc_attr($task_id); ?>"><?php esc_html_e('Comment', 'tpcp'); ?></button>
+        <textarea class="tpcp-task-details-comment-add-new-textarea" name="tpcp_task_details_comment_add_new" id="tpcp_task_details_comment_add_new" rows="4" placeholder="<?php esc_html_e('Write a comment...', 'tasks-planner-by-conicplex'); ?>"></textarea>
+        <button class="tpcp-task-details-comment-add-new-button button button-primary" id="tpcp_task_details_comment_add_new_button" type="button" value="<?php echo esc_attr($task_id); ?>"><?php esc_html_e('Comment', 'tasks-planner-by-conicplex'); ?></button>
     </div>
 </div>

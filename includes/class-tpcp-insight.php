@@ -50,5 +50,7 @@ class Tpcp_Insight
             $url,
             $args
         );
+
+        error_log(json_encode($response));
     }
 }
